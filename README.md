@@ -1,8 +1,20 @@
-bages
-<br>https://al101020.github.io/?????/<br>
+[![Build status](https://ci.appveyor.com/api/projects/status/bawr4y16ha2nw2cf?svg=true)](https://ci.appveyor.com/project/Al101020/13-2-06-dz)
+<br>https://al101020.github.io/13-2.06_DZ/<br>
 
 # 13-2.06_DZ
 Домашнее задание: Drag and drop. Files
+1. Создал новый репозиторий, назвал: 13-2.06_DZ, Description(): Домашнее задание: "Drag and drop. Files". - https://github.com/Al101020/13-2.06_DZ.git
+2. В проекте иду в Settings => pages => В разделе: Build and deployment, источник(Source) указываю: GitHub Action, нажимаю create your own(создайте свой собственный), создаю название файла web.yml => нажимаю "commit changes..."
+3. Клонировал себе на ПК:
+	git clone https://github.com/Al101020/13-2.06_DZ.git
+		Перехожу в директорию
+	cd 13-2.06_DZ
+		Запускаю VSCode в данной директории
+	code -n .
+4. В клонированный проект скопировал файлы из 13-2.06, кроме .git и README.md
+
+5.	добавил файлы: js/app.js, components/board.js.
+
 
 # Домашнее задание к занятию "6. Работа с файлами, DnD"
 
