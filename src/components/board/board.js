@@ -8,6 +8,7 @@ function createBoard() {
 
   const divСolumn1 = document.createElement('div'); //
   divСolumn1.classList.add('divСolumn1');
+  divСolumn1.classList.add('column');
   const todo = document.createElement('p');
   todo.classList.add('title');
   todo.textContent = 'TODO';
@@ -23,6 +24,7 @@ function createBoard() {
 
   const divСolumn2 = document.createElement('div'); //
   divСolumn2.classList.add('divСolumn2');
+  divСolumn2.classList.add('column');
   const inProgress = document.createElement('p');
   inProgress.classList.add('title');
   inProgress.textContent = 'IN PROGRESS';
@@ -39,6 +41,7 @@ function createBoard() {
 
   const divСolumn3 = document.createElement('div'); //
   divСolumn3.classList.add('divСolumn3');
+  divСolumn3.classList.add('column');
   const done = document.createElement('p');
   done.classList.add('title');
   done.textContent = 'DONE';

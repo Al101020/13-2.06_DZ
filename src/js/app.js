@@ -4,3 +4,4 @@
 // console.log('app.js bundled');
 
 import '../components/board/board';
+import '../components/board/addAnotherCart';

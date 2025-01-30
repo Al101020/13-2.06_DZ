@@ -46,6 +46,7 @@ p.title {
 p.addLink {
     margin: 0px;
     padding-left: 10px;
+    cursor: pointer;
 }
 
       /* #FFFFFF; */
