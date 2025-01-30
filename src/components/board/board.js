@@ -2,6 +2,8 @@ import './board.css';
 
 // console.log('board.js')
 
+// const dr = '<dr>'; // нет
+
 function createBoard() {
   const divBoard = document.createElement('div');
   divBoard.classList.add('board');
@@ -13,6 +15,7 @@ function createBoard() {
   todo.classList.add('title');
   todo.textContent = 'TODO';
   divСolumn1.appendChild(todo); // ---
+  // divСolumn1.appendChild(dr);
   const block1 = document.createElement('div');
   block1.classList.add('block');
   divСolumn1.appendChild(block1); // --
