@@ -65,9 +65,22 @@ div.block {
     left: 0px;
     right: 0px;
     background-color: #ffffff;
-    margin:1px 10px 1px 10px;
+    margin:2px 10px 2px 10px;
     padding: 2px 5px;
     width: auto;
     min-height: 15px;
 }
 /* тттттт */
+p.text {
+    font-size: 10px;
+    font-weight: 700;
+    margin:0px 0px 0px 0px;
+}
+
+.cart.dragged {
+    border-radius: 10px;
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    background: #fff;
+}
