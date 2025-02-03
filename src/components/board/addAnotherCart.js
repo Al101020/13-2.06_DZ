@@ -33,7 +33,7 @@ function addAnotherCartClick(e) {
     const divText = document.createElement('div');
     divText.textContent = inputText.value;
     cart.appendChild(divText);
-    cart.removeChild(inputText); // console.log(inputText.value);    // cart.removeChild(inputText);    // console.log(e);    // console.log(e.target.parentElement); // .querySelector('input')
+    cart.removeChild(inputText);
   });
 }
 
