@@ -9,32 +9,31 @@ function addAnotherCartClick(e) {
   cart.classList.add('cart');
   numerCart += 1;
 
-  // cart.textContent = `Карточка №${numerCart}`;
+  const divClose = document.createElement('div');
+  divClose.textContent = 'x';
+  divClose.classList.add('close');
+  divClose.addEventListener('click', (event) => { // console.log(e.target.parentElement);
+    event.target.parentElement.remove();
+  }); // console.log('Клик')
+  cart.appendChild(divClose);
+
   const p = document.createElement('p');
   p.textContent = `Карточка №${numerCart}`;
   p.classList.add('text');
   cart.appendChild(p);
 
   const inputText = document.createElement('input');
-  inputText.type = 'text';
-  // console.log(inputText);
+  inputText.type = 'text'; // console.log(inputText);
 
   cart.appendChild(inputText);
 
-  block.appendChild(cart);
+  block.appendChild(cart); // console.log(block.children.querySelector('input'));
 
-  // console.log(block.children.querySelector('input'));
   inputText.addEventListener('blur', () => {
     const divText = document.createElement('div');
     divText.textContent = inputText.value;
     cart.appendChild(divText);
-    cart.removeChild(inputText);
-
-    // console.log(inputText.value);
-    // cart.removeChild(inputText);
-    // console.log(e);
-
-    // console.log(e.target.parentElement); // .querySelector('input')
+    cart.removeChild(inputText); // console.log(inputText.value);    // cart.removeChild(inputText);    // console.log(e);    // console.log(e.target.parentElement); // .querySelector('input')
   });
 }
 

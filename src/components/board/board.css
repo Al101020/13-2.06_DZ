@@ -84,3 +84,31 @@ p.text {
     pointer-events: none;
     background: #fff;
 }
+
+/* ддддддд 2025.02.03 ддддддд хочу себе*/
+
+.close {
+    float: right;     /* display: inline-block; */
+    padding: 2px 5px;
+    background:#ccc;
+    cursor: pointer;
+}
+
+/* --- в интернете --- */
+
+#close {
+    /* display: right; */
+    position: absolute;
+    /* display: inline-block; */
+    padding: 2px 5px;
+    background:#ccc;
+    cursor: pointer;
+}
+
+/* #close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    color:#fff;
+} */
