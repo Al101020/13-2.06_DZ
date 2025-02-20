@@ -3,6 +3,13 @@
 import '../components/board/board';
 import '../components/board/addTaskAndForm';
 import '../components/board/cartDnD';
+import loadBoard from '../components/board/loadBoard';
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadBoard();
+});
+
+// import { onMouseOver, onMouseUp, mousedown } from '../components/board/cartDnD';
 
 // const carts = document.querySelectorAll('cart');
 

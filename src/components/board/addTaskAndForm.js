@@ -1,7 +1,4 @@
-// import { mousedown, onMouseUp, onMouseOver } from './cartDnD';
-import { mousedown } from './cartDnD';
-
-// cartDnD from './cartDnD';
+import { mousedown, saveBoard } from './cartDnD';
 
 const board = document.querySelector('.board');
 
@@ -35,9 +32,11 @@ function formClickAdd(e) {
   divClose.textContent = 'x';
   divClose.classList.add('divClose');
   divClose.classList.add('displayNone');
-  function removeParent(event) {
+  function removeParent(event) { // функция удаления задачи(родителя)
     divClose.removeEventListener('click', removeParent);
     event.target.parentElement.remove();
+
+    saveBoard(); // сохраняем доску в localStorage
   }
   divClose.addEventListener('click', removeParent);
   cart.appendChild(divClose);
@@ -75,7 +74,9 @@ function formClickAdd(e) {
   cart.addEventListener('mouseout', cartMouseout); // пропадание кнопки - X
 
   block.appendChild(cart);
-}
+
+  saveBoard(); // добавили и саханили
+} // функция добавления задачи
 
 const buttonAdd = board.querySelectorAll('.buttonAdd');
 
