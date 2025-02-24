@@ -84,6 +84,7 @@ p.text {
     z-index: 999;
     pointer-events: none;
     background: #fff;
+    width: 150px;
 }
 
 /* 

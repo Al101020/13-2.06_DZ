@@ -1,9 +1,7 @@
 let actualCart;
-let parentСolumn;
-let parentСolumnGetBCRect;
 let overTarget; // что под мышкой, навели мышь
 let parent; // Родитель куда вставлять карточку
-
+let parentWas; // Родитель был
 const board = document.querySelector('.board');
 
 function saveBoard() {
@@ -25,14 +23,18 @@ function saveBoard() {
   localStorage.setItem('boardState', JSON.stringify(boardState));
 }
 
-const onMouseOver = (e) => {
+const onMousemove = (e) => {
+  if (!actualCart) return;
   overTarget = e.target;
-
-  actualCart.style.top = `${e.clientY - parentСolumnGetBCRect.top}px`;
-  actualCart.style.left = `${e.clientX - parentСolumnGetBCRect.left}px`;
+  actualCart.style.position = 'absolute';
+  actualCart.style.zIndex = '998';
+  actualCart.style.top = `${e.clientY}px`;
+  actualCart.style.left = `${e.clientX}px`;
+  board.appendChild(actualCart);
 };
 
 const onMouseUp = (e) => {
+  if (!actualCart) return;
   e.preventDefault();
   actualCart.removeAttribute('style');
 
@@ -48,15 +50,15 @@ const onMouseUp = (e) => {
   } else if (overTarget.classList.contains('block')) {
     parent = overTarget;
     parent.appendChild(actualCart);
-  } else {
-    console.log('Под мышкой НЕТ: cart, text, divClose, block. Не надо ничего делать');
+  } else { // console.log('Под мышкой НЕТ: cart, text, divClose. Вернуть назад');
+    parentWas.appendChild(actualCart);
   }
 
   actualCart.classList.remove('dragged');
   actualCart = undefined;
 
   document.documentElement.removeEventListener('mouseup', onMouseUp);
-  document.documentElement.removeEventListener('mouseover', onMouseOver);
+  document.documentElement.removeEventListener('mousemove', onMousemove);
 
   saveBoard();
 };
@@ -82,15 +84,14 @@ function mousedown(e) { // Событие происходит при нажат
     return;
   }
 
+  parentWas = actualCart.parentElement;
+
   actualCart.classList.add('dragged');
 
   document.documentElement.addEventListener('mouseup', onMouseUp);
-  document.documentElement.addEventListener('mouseover', onMouseOver);
-
-  parentСolumn = actualCart.parentElement;
-  parentСolumnGetBCRect = parentСolumn.getBoundingClientRect();
+  document.documentElement.addEventListener('mousemove', onMousemove);
 }
 
 export {
-  mousedown, onMouseUp, onMouseOver, saveBoard,
+  mousedown, onMouseUp, onMousemove, saveBoard,
 };
